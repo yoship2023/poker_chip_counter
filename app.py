@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 
 def poker_chip_counter():
     st.title("チップかぞえチャオ")
-    st.write("チップ数を直接入力・末尾-+ボタンを押下して設定後、計算ボタンを押下")
+    st.write("チップ数を直接入力 or 末尾-+ボタンで設定後、計算ボタンを押下")
 
     col_01, col_02 = st.columns(2)
     col_11, col_12 = st.columns(2)

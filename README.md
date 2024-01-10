@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project is a web application for tracking your performance in poker tournaments. It is built using Streamlit and Python.
+This project is a web application that counts the number of poker chips.
+It is built using Streamlit and Python.
 
 ---
 
@@ -59,10 +60,3 @@ After running the Streamlit app, navigate to \`http://localhost:8501\` in your w
 ## Contributing
 
 If you would like to contribute, please fork the repository and create a pull request, or open an issue for discussion.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-

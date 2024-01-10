@@ -42,7 +42,7 @@ def poker_chip_counter():
     st.markdown(
     """
     ---
-    Froduced by Yoship
+    Froduced by Yoship.
     Follow me on X: [yoship](https://twitter.com/yoship2023)
     """,
     unsafe_allow_html=True,

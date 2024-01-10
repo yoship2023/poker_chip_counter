@@ -8,12 +8,12 @@ def poker_chip_counter():
     # チップの数とBBの入力フィールド
     bb_value = st.number_input("1BBのチップ数", value=200)
     black_chips = st.number_input("100点（⚫️黒いチップ）の数", value=0)
-    purple_chips = st.number_input("500点（🟣紫色のチップ）の数", value=0)
+    purple_chips = st.number_input("500点（🟣紫色チップ）の数", value=0)
     blue_chips = st.number_input("1000点（🔵青いチップ）の数", value=0)
-    yellow_chips = st.number_input("5000点（🟡黄色のチップ）の数", value=0)
+    yellow_chips = st.number_input("5000点（🟡黄色チップ）の数", value=0)
     red_chips = st.number_input("25000点（🔴赤いチップ）の数", value=0)
     white_chips = st.number_input("100000点（⚪️赤いチップ）の数", value=0)
-    light_purple_chips = st.number_input("1000000点（⚪️赤いチップ）の数", value=0)
+    light_purple_chips = st.number_input("1000000点（薄紫チップ）の数", value=0)
 
     # 計算ボタン
     if st.button("計算"):

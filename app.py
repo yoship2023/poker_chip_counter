@@ -23,12 +23,12 @@ def poker_chip_counter():
             + red_chips * 25000 + white_chips * 100000 + light_purple_chips * 1000000
         # BB表記への変換
         total_bb = total_chips / bb_value
-        st.write(f"合計チップ数: {total_chips:,} チップ ({total_bb:,.2f} BB)")
+        st.subheader(f"合計点数： {total_chips:,} 点 ({total_bb:,.2f} BB)")
 
     # 現在時刻の表示
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
-    memo_title = "メモ 現在時刻（JST）: " + current_time
+    memo_title = "メモ 現在時刻（JST）：" + current_time
     memo = st.text_area(memo_title, "")
 
 if __name__ == "__main__":

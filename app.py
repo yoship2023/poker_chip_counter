@@ -9,7 +9,7 @@ def poker_chip_counter():
     col_11, col_12 = st.columns(2)
     col_21, col_22 = st.columns(2)
     col_31, col_32 = st.columns(2)
-    col_41, col_42 = st.columns(2)
+    col_41, col_42 = st.columns([1, 6])
 
     # チップの数とBBの入力フィールド
     black_chips = col_01.number_input("100点（⚫️黒いチップ）の数", value=0)

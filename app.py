@@ -67,7 +67,7 @@ def poker_chip_counter():
         col_41, col_42 = st.columns(2)
         col_51, col_52 = st.columns(2)
         col_61, col_62 = st.columns(2)
-        col_71 = st.columns(1)
+        col_71, col_72 = st.columns(2)
         col_98, col_99 = st.columns([1, 6])
 
         # チップの数とBBの入力フィールド

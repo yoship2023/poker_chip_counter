@@ -4,6 +4,7 @@ from zoneinfo import ZoneInfo
 
 def poker_chip_counter():
     st.title("チップかぞえチャオ")
+    st.write("チップ数を直接入力 or 末尾-+ボタンで設定後、計算ボタンを押下")
 
     col_01, col_02 = st.columns(2)
     col_11, col_12 = st.columns(2)
@@ -12,14 +13,14 @@ def poker_chip_counter():
     col_41, col_42 = st.columns([1, 6])
 
     # チップの数とBBの入力フィールド
-    black_chips = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
-    purple_chips = col_11.number_input("500点（🟣紫色チップ）の数", min_value=0, value=0)
-    blue_chips = col_21.number_input("1,000点（🔵青いチップ）の数", min_value=0, value=0)
-    yellow_chips = col_31.number_input("5,000点（🟡黄色チップ）の数", min_value=0, value=0)
-    red_chips = col_02.number_input("25,000点（🔴赤いチップ）の数", min_value=0, value=0)
-    white_chips = col_12.number_input("100,000点（⚪️赤いチップ）の数", min_value=0, value=0)
-    light_purple_chips = col_22.number_input("1,000,000点（薄紫チップ）の数", min_value=0, value=0)
-    bb_value = col_32.number_input("1BBの点数", min_value=0, value=200, step=100)
+    black_chips = col_01.number_input("100点（⚫️黒いチップ）の数", value=0)
+    purple_chips = col_02.number_input("500点（🟣紫色チップ）の数", value=0)
+    blue_chips = col_11.number_input("1,000点（🔵青いチップ）の数", value=0)
+    yellow_chips = col_12.number_input("5,000点（🟡黄色チップ）の数", value=0)
+    red_chips = col_21.number_input("25,000点（🔴赤いチップ）の数", value=0)
+    white_chips = col_22.number_input("100,000点（⚪️赤いチップ）の数", value=0)
+    light_purple_chips = col_31.number_input("1,000,000点（薄紫チップ）の数", value=0)
+    bb_value = col_32.number_input("1BBの点数", value=200, step=100)
 
     # 計算ボタン
     if col_41.button("計算"):
@@ -36,6 +37,16 @@ def poker_chip_counter():
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
     memo = st.text_area(memo_title, "")
+
+    # 画面の下部にTwitterリンクを追加
+    st.markdown(
+    """
+    ---
+    Produced by Yoship.
+    Follow me on X: [yoship](https://twitter.com/yoship2023)
+    """,
+    unsafe_allow_html=True,
+    )
 
 if __name__ == "__main__":
     poker_chip_counter()

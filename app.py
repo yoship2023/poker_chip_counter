@@ -92,7 +92,7 @@ def poker_chip_counter():
         chips_31_value = col_61.number_input("チップ7の点数", min_value=0, value=0)
         chips_31_cnt = col_62.number_input("チップ7の枚数", min_value=0, value=0)
 
-        bb_value = col_71.number_input("1BBの点数", min_value=0, value=0)
+        bb_value = col_71.number_input("1BBの点数", min_value=1, value=1)
 
     # 計算ボタン
     if col_98.button("計算"):

@@ -150,7 +150,7 @@ def poker_chip_counter():
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
-    memo = st.text_area(memo_title, get_previous_input())
+    memo = st.text_input(memo_title, get_previous_input())
     print(memo)
     # 入力値を保存
     save_current_input(memo)

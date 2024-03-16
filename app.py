@@ -139,7 +139,7 @@ def poker_chip_counter():
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
-    memo = st.text_area(memo_title, "")
+    memo = st.text_area(memo, "")
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

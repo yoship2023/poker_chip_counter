@@ -7,7 +7,7 @@ def poker_chip_counter():
 
     selected_item = st.radio(
         'カウントするチップの種類を選択して下さい',
-        ['JOPT用', 'カスタム用']
+        ['JOPT用', '一般的なリング用', 'カスタム用']
     )
 
     st.write("チップ数を直接入力 or 末尾-+ボタンで設定後、計算ボタンを押下")
@@ -57,6 +57,36 @@ def poker_chip_counter():
 
         chips_31_value = 1000000
         chips_31_cnt = col_31.number_input("1,000,000点（薄紫チップ）の数", min_value=0, value=0)
+
+        bb_value = col_32.number_input("1BBの点数", min_value=0, value=200, step=100)
+    elif selected_item == '一般的なリング用':
+        col_01, col_02 = st.columns(2)
+        col_11, col_12 = st.columns(2)
+        col_21, col_22 = st.columns(2)
+        col_31, col_32 = st.columns(2)
+        col_98, col_99 = st.columns([1, 6])
+
+        # チップの数とBBの入力フィールド
+        chips_01_value = 100
+        chips_01_cnt = col_01.number_input("100点の数", min_value=0, value=0)
+
+        chips_02_value = 500
+        chips_02_cnt = col_02.number_input("500点の数", min_value=0, value=0)
+
+        chips_11_value = 1000
+        chips_11_cnt = col_11.number_input("1,000点の数", min_value=0, value=0)
+
+        chips_12_value = 5000
+        chips_12_cnt = col_12.number_input("5,000点の数", min_value=0, value=0)
+
+        chips_21_value = 25000
+        chips_21_cnt = col_21.number_input("1,0000点の数", min_value=0, value=0)
+
+        chips_22_value = 100000
+        chips_22_cnt = col_22.number_input("100,000点の数", min_value=0, value=0)
+
+        chips_31_value = 1000000
+        chips_31_cnt = col_31.number_input("1,000,000点の数", min_value=0, value=0)
 
         bb_value = col_32.number_input("1BBの点数", min_value=0, value=200, step=100)
     else:

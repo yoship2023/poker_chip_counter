@@ -152,6 +152,8 @@ def poker_chip_counter():
     memo_title = "メモ 現在時刻（JST）：" + current_time
     memo = st.text_input(memo_title, get_previous_input())
     print(memo)
+    # 前回の入力値を表示
+    st.write("前回の入力値:", memo)
     # 入力値を保存
     save_current_input(memo)
     # 前回の入力値を表示

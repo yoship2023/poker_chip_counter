@@ -2,6 +2,17 @@ import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+# 前回の入力値を保存するためのキー
+prev_input_key = "previous_input"
+
+# 前回の入力値を取得する関数
+def get_previous_input():
+    return st.session_state.get(prev_input_key, "")
+
+# 現在の入力値を保存する関数
+def save_current_input(input_value):
+    st.session_state[prev_input_key] = input_value
+
 def poker_chip_counter():
     st.title("チップかぞえチャオ")
 
@@ -139,8 +150,11 @@ def poker_chip_counter():
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
-    memo = st.text_area(memo_title, "")
-    st.write("入力文字列：", memo)
+    memo = st.text_area(memo_title, get_previous_input())
+    # 入力値を保存
+    save_current_input(memo)
+    # 前回の入力値を表示
+    st.write("前回の入力値:", get_previous_input())
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

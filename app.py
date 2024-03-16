@@ -140,7 +140,7 @@ def poker_chip_counter():
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
     memo = st.text_area(memo_title, "")
-    st.text(memo)
+    st.write("入力文字列：", memo)
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

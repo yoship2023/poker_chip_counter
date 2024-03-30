@@ -91,7 +91,7 @@ def poker_chip_counter():
         chips_12_cnt = col_12.number_input("5,000点の数", min_value=0, value=0)
 
         chips_21_value = 25000
-        chips_21_cnt = col_21.number_input("1,0000点の数", min_value=0, value=0)
+        chips_21_cnt = col_21.number_input("2,5000点の数", min_value=0, value=0)
 
         chips_22_value = 100000
         chips_22_cnt = col_22.number_input("100,000点の数", min_value=0, value=0)

@@ -151,15 +151,15 @@ def poker_chip_counter():
     # メモ欄
     memo_title = "メモ 現在時刻（JST）：" + current_time
     memo = st.text_input(memo_title, get_previous_input())
-    memo = st.text_area(memo_title, "")
-    print(memo)
-    print("a")
+    # memo = st.text_area(memo_title, "")
+    # print(memo)
+    # print("a")
     # 前回の入力値を表示
-    st.write("前回の入力値:", memo)
+    # st.write("前回の入力値:", memo)
     # 入力値を保存
-    save_current_input(memo)
+    # save_current_input(memo)
     # 前回の入力値を表示
-    st.write("前回の入力値:", get_previous_input())
+    # st.write("前回の入力値:", get_previous_input())
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

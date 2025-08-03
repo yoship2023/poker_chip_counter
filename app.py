@@ -139,8 +139,8 @@ def poker_chip_counter():
     # st.write("前回の入力値:", get_previous_input())
 
     # 表示確認
-    st.write("現在のchip_01_cnt：", st.session_state.chip_01_cnt)
-    #st.write("現在のchip_01_cnt：", st.session_state["chips_01_cnt"])
+    st.write("現在のchips_01_cnt：", st.session_state.chips_01_cnt)
+    st.write("現在のchips_01_cnt：", st.session_state["chips_01_cnt"])
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

@@ -23,6 +23,16 @@ def poker_chip_counter():
 
     st.write("チップ数を直接入力 or 末尾-+ボタンで設定後、計算ボタンを押下")
 
+    # 入力値の定義とセッションステート管理
+    chip_keys = [
+        "chips_01_cnt"
+    ]
+
+    # セッションステート初期化
+    for key in chip_keys:
+        if key not in st.session_state:
+            st.session_state[key] = 0
+
     #初期値
     chips_01_value = 100
     chips_01_cnt = 0
@@ -48,7 +58,9 @@ def poker_chip_counter():
         col_98, col_99 = st.columns([1, 6])
 
         if selected_item == 'JOPT用':
-            chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
+            st.session_state["chips_01_cnt"] = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=st.session_state["chips_01_cnt"], key="chips_01_cnt")
+            chips_01_cnt = st.session_state["chips_01_cnt"]
+            #chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
             chips_02_cnt = col_02.number_input("500点（🟣紫色チップ）の数", min_value=0, value=0)
             chips_11_cnt = col_11.number_input("1,000点（🔵青いチップ）の数", min_value=0, value=0)
             chips_12_cnt = col_12.number_input("5,000点（🟡黄色チップ）の数", min_value=0, value=0)

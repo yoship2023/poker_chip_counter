@@ -49,7 +49,9 @@ def poker_chip_counter():
 
         # チップの数とBBの入力フィールド
         chips_01_value = 100
-        chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
+        # chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
+        # チップ数の入力欄（セッションステートを使って保持）
+        chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, key="chip_01_cnt")
 
         chips_02_value = 500
         chips_02_cnt = col_02.number_input("500点（🟣紫色チップ）の数", min_value=0, value=0)
@@ -149,7 +151,7 @@ def poker_chip_counter():
     # 現在時刻の表示
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
-    memo_title = "メモ1 現在時刻（JST）：" + current_time
+    memo_title = "メモ2 現在時刻（JST）：" + current_time
     if "memo_text" not in st.session_state:
         st.session_state["memo_text"] = ""
     st.session_state["memo_text"] = st.text_input(memo_title, st.session_state["memo_text"])
@@ -163,6 +165,9 @@ def poker_chip_counter():
     # save_current_input(memo)
     # 前回の入力値を表示
     # st.write("前回の入力値:", get_previous_input())
+
+    # 表示確認
+    st.write("現在のchip_01_cnt：", st.session_state.chip_01_cnt)
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

@@ -38,7 +38,7 @@ def poker_chip_counter():
     chips_22_cnt = 0
     chips_31_value = 0
     chips_31_cnt = 0
-    bb_value = 0
+    bb_value = 200
 
     if selected_item == 'JOPT用' or selected_item == '一般的なリング用':
         col_01, col_02 = st.columns(2)

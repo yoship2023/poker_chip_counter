@@ -40,67 +40,40 @@ def poker_chip_counter():
     chips_31_cnt = 0
     bb_value = 0
 
-    if selected_item == 'JOPT用':
+    if selected_item == 'JOPT用' or selected_item == '一般的なリング用':
         col_01, col_02 = st.columns(2)
         col_11, col_12 = st.columns(2)
         col_21, col_22 = st.columns(2)
         col_31, col_32 = st.columns(2)
         col_98, col_99 = st.columns([1, 6])
 
-        # チップの数とBBの入力フィールド
+        # 1チップの点数
         chips_01_value = 100
-        # chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
-        # チップ数の入力欄（セッションステートを使って保持）
-        chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, key="chip_01_cnt")
-
         chips_02_value = 500
-        chips_02_cnt = col_02.number_input("500点（🟣紫色チップ）の数", min_value=0, value=0)
-
         chips_11_value = 1000
-        chips_11_cnt = col_11.number_input("1,000点（🔵青いチップ）の数", min_value=0, value=0)
-
         chips_12_value = 5000
-        chips_12_cnt = col_12.number_input("5,000点（🟡黄色チップ）の数", min_value=0, value=0)
-
         chips_21_value = 25000
-        chips_21_cnt = col_21.number_input("25,000点（🔴赤いチップ）の数", min_value=0, value=0)
-
         chips_22_value = 100000
-        chips_22_cnt = col_22.number_input("100,000点（⚪️赤いチップ）の数", min_value=0, value=0)
-
         chips_31_value = 1000000
-        chips_31_cnt = col_31.number_input("1,000,000点（薄紫チップ）の数", min_value=0, value=0)
 
-        bb_value = col_32.number_input("1BBの点数", min_value=0, value=200, step=100)
-    elif selected_item == '一般的なリング用':
-        col_01, col_02 = st.columns(2)
-        col_11, col_12 = st.columns(2)
-        col_21, col_22 = st.columns(2)
-        col_31, col_32 = st.columns(2)
-        col_98, col_99 = st.columns([1, 6])
+        if selected_item == 'JOPT用':
+            chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)
+            chips_02_cnt = col_02.number_input("500点（🟣紫色チップ）の数", min_value=0, value=0)
+            chips_11_cnt = col_11.number_input("1,000点（🔵青いチップ）の数", min_value=0, value=0)
+            chips_12_cnt = col_12.number_input("5,000点（🟡黄色チップ）の数", min_value=0, value=0)
+            chips_21_cnt = col_21.number_input("25,000点（🔴赤いチップ）の数", min_value=0, value=0)
+            chips_22_cnt = col_22.number_input("100,000点（⚪️赤いチップ）の数", min_value=0, value=0)
+            chips_31_cnt = col_31.number_input("1,000,000点（薄紫チップ）の数", min_value=0, value=0)
+        else:
+            chips_01_cnt = col_01.number_input("100点の数", min_value=0, value=0)
+            chips_02_cnt = col_02.number_input("500点の数", min_value=0, value=0)
+            chips_11_cnt = col_11.number_input("1,000点の数", min_value=0, value=0)
+            chips_12_cnt = col_12.number_input("5,000点の数", min_value=0, value=0)
+            chips_21_cnt = col_21.number_input("2,5000点の数", min_value=0, value=0)
+            chips_22_cnt = col_22.number_input("100,000点の数", min_value=0, value=0)
+            chips_31_cnt = col_31.number_input("1,000,000点の数", min_value=0, value=0)
 
-        # チップの数とBBの入力フィールド
-        chips_01_value = 100
-        chips_01_cnt = col_01.number_input("100点の数", min_value=0, value=0)
-
-        chips_02_value = 500
-        chips_02_cnt = col_02.number_input("500点の数", min_value=0, value=0)
-
-        chips_11_value = 1000
-        chips_11_cnt = col_11.number_input("1,000点の数", min_value=0, value=0)
-
-        chips_12_value = 5000
-        chips_12_cnt = col_12.number_input("5,000点の数", min_value=0, value=0)
-
-        chips_21_value = 25000
-        chips_21_cnt = col_21.number_input("2,5000点の数", min_value=0, value=0)
-
-        chips_22_value = 100000
-        chips_22_cnt = col_22.number_input("100,000点の数", min_value=0, value=0)
-
-        chips_31_value = 1000000
-        chips_31_cnt = col_31.number_input("1,000,000点の数", min_value=0, value=0)
-
+        # BBの入力フィールド
         bb_value = col_32.number_input("1BBの点数", min_value=0, value=200, step=100)
     else:
         col_01, col_02 = st.columns(2)
@@ -151,11 +124,8 @@ def poker_chip_counter():
     # 現在時刻の表示
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
-    memo_title = "メモ2 現在時刻（JST）：" + current_time
-    if "memo_text" not in st.session_state:
-        st.session_state["memo_text"] = ""
-    st.session_state["memo_text"] = st.text_input(memo_title, st.session_state["memo_text"])
-    #memo = st.text_input(memo_title, get_previous_input())
+    memo_title = "メモ3 現在時刻（JST）：" + current_time
+    memo = st.text_input(memo_title, get_previous_input())
     # memo = st.text_area(memo_title, "")
     # print(memo)
     # print("a")
@@ -167,7 +137,7 @@ def poker_chip_counter():
     # st.write("前回の入力値:", get_previous_input())
 
     # 表示確認
-    st.write("現在のchip_01_cnt：", st.session_state.chip_01_cnt)
+    #st.write("現在のchip_01_cnt：", st.session_state.chip_01_cnt)
 
     # 画面の下部にTwitterリンクを追加
     st.markdown(

@@ -24,19 +24,19 @@ def poker_chip_counter():
     st.write("チップ数を直接入力 or 末尾-+ボタンで設定後、計算ボタンを押下")
 
     #初期値
-    chips_01_value = 0
+    chips_01_value = 100
     chips_01_cnt = 0
-    chips_02_value = 0
+    chips_02_value = 500
     chips_02_cnt = 0
-    chips_11_value = 0
+    chips_11_value = 1000
     chips_11_cnt = 0
-    chips_12_value = 0
+    chips_12_value = 5000
     chips_12_cnt = 0
-    chips_21_value = 0
+    chips_21_value = 25000
     chips_21_cnt = 0
-    chips_22_value = 0
+    chips_22_value = 100000
     chips_22_cnt = 0
-    chips_31_value = 0
+    chips_31_value = 1000000
     chips_31_cnt = 0
     bb_value = 200
 
@@ -46,15 +46,6 @@ def poker_chip_counter():
         col_21, col_22 = st.columns(2)
         col_31, col_32 = st.columns(2)
         col_98, col_99 = st.columns([1, 6])
-
-        # 1チップの点数
-        chips_01_value = 100
-        chips_02_value = 500
-        chips_11_value = 1000
-        chips_12_value = 5000
-        chips_21_value = 25000
-        chips_22_value = 100000
-        chips_31_value = 1000000
 
         if selected_item == 'JOPT用':
             chips_01_cnt = col_01.number_input("100点（⚫️黒いチップ）の数", min_value=0, value=0)

@@ -149,7 +149,7 @@ def poker_chip_counter():
     # 現在時刻の表示
     current_time = datetime.now(ZoneInfo("Asia/Tokyo")).strftime("%Y-%m-%d %H:%M:%S")
     # メモ欄
-    memo_title = "メモ 現在時刻（JST）：" + current_time
+    memo_title = "メモ1 現在時刻（JST）：" + current_time
     if "memo_text" not in st.session_state:
         st.session_state["memo_text"] = ""
     st.session_state["memo_text"] = st.text_input(memo_title, st.session_state["memo_text"])
